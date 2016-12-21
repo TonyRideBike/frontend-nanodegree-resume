@@ -1,59 +1,86 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
- */
+*/
 
 /* $("#main").append("Tony Lyu"); */
 
- var awesomeThoughts = "I am Tony and I am AWESOME!";
- console.log(awesomeThoughts);
+// var awesomeThoughts = "I am Tony and I am AWESOME!";
+console.log("Hello World!");
+// var role = "Software Engineer";
 
- var name = "Tony LYU";
- var role = "Software Engineer";
+// var formattedName = HTMLheaderName.replace("%data%", name);
+// var formattedRole = HTMLheaderRole.replace("%data%", role);
 
- var formattedName = HTMLheaderName.replace("%data%", name);
- var formattedRole = HTMLheaderRole.replace("%data%", role);
+// $("#header").prepend(formattedRole);
+// $("#header").prepend(formattedName);
 
- $("#header").prepend(formattedRole);
- $("#header").prepend(formattedName);
- 
- var skills = [Java, C, Android, JavaScript]
- 
- var bio = {
-     "name" : name,
-     "role" : role,
-     "contacts" : {
-		 "mobile" : "+86-177-2761-6451",
-		 "email" : "tony.lv@auchan.com",
-		 "twitter" : "TonyRideBike",
-		 "github" : "TonyRideBike",
-		 "blog" : "I don't have a blog",
-		 "location" : "Guangzhou, China."
-	 },
-	 "bioPic" : "images/fry.png",
-	 "welcomeMsg" : "Lorem ipsum dolor sit amet etc etc etc.",
-	 "skills" : skills
- };
- 
- 
- var work = {
-/* 	 "employer" : "Auchan International Corporate",
-	 "title" : role,
-	 "dates" : "Since April 2016",
-	 "location" : "Guangzhou, China",
-	 "description" : "it's my current job" */
- };
- work.position = role;
- work.employer = "Auchan";
- work.years = 0.5;
- 
- var education = {
-/* 	 "name" : "JLU",
-	 "dates" : "September 2010 - July 2014",
-	 "degree" : "Bachelor's Degree of Engineering",
-	 "location" : "Changchun, Jilin, China",
-	 "major" : "Communication Engineering" */
- };
- education["name"] = "Jilin University";
- education["years"] = "2010 - 2014";
- education["city"] = "Changchun, Jilin, China";
- 
+var bio = {
+    "name": "Tony LYU",
+    "role": "Software Engineer",
+    "contacts": {
+        "mobile": "+86-177-2761-6451",
+        "email": "tony.lv@auchan.com",
+        "twitter": "TonyRideBike",
+        "github": "https://github.com/TonyRideBike",
+        "blog": "I don't have a blog :(",
+        "location": "Guangzhou, China."
+    },
+    "bioPic": "images/fry.png",
+    "welcomeMsg": "Lorem ipsum dolor sit amet etc etc etc.",
+    "skills": [
+        "Java",
+        "C",
+        "Android Telephony",
+        "JavaScript",
+        "driving"
+    ]
+};
+
+var work = [
+    {
+        "employer": "Samsung Electronic",
+        "title": "Software Engineer",
+        "dates": "July 2014 - March 2016",
+        "location": "Guangzhou, China",
+        "description": "Android Telephony Framework & RIL Engineer"
+    },
+    {
+        "employer": "Auchan International Corporate",
+        "title": "Software Engineer",
+        "dates": "Since April 2016",
+        "location": "Guangzhou, China",
+        "description": "it's my current job."
+    }
+];
+
+var education = {
+    "schools": [
+        {
+            "name": "JLU",
+            "dates": "September 2010 - July 2014",
+            "degree": "Bachelor's Degree of Engineering",
+            "location": "Changchun, Jilin, China",
+            "major": "Communication Engineering"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "title": "JavaScript Basics",
+            "school": "Udacity",
+            "dates": "Dec 7 2016 - today",
+            "url": "https://github.com/TonyRideBike/frontend-nanodegree-resume"
+        }
+    ]
+};
+
+// education["name"] = "Jilin University";
+// education["years"] = "2010 - 2014";
+// education["city"] = "Changchun, Jilin, China";
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+// $("#header").append(work["position"]);
+// $("#header").append(education.name);
