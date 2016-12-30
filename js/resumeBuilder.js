@@ -84,3 +84,61 @@ $("#header").prepend(formattedName);
 
 // $("#header").append(work["position"]);
 // $("#header").append(education.name);
+
+if (bio.skills.length > 0) {
+    // console.log("length of skills = " + bio.skills.length);
+    $("#header").append(HTMLskillsStart);
+    for(var i in bio.skills) {
+        // console.log(skill);
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+    }
+    // for (var i = bio.skills.length - 1; i >= 0; i--) {
+    //     console.log("what happend?");
+    //     var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+    //     $("#skills").append(formattedSkill);
+    // };
+    // $("#skills").append(HTMLskills);
+};
+
+// if (work.length > 0) {
+//     // for(var i in work) {
+//     //     $("#workExperience").append(HTMLworkStart);
+//     //     var formattedEmployer = HTMLworkEmployer.replace("%data%", work[i].employer);
+//     //     var formattedTitle = HTMLworkTitle.replace("%data%", work[i].title);
+//     //     $(".work-entry:last").append(formattedEmployer + formattedTitle);
+//     // }
+//     work.forEach(function(work_entry){
+//         console.log(work_entry);
+//         $("#workExperience").append(HTMLworkStart);
+//         var formattedEmployer = HTMLworkEmployer.replace("%data%", work_entry.employer);
+//         var formattedTitle = HTMLworkTitle.replace("%data%", work_entry.title);
+//         $(".work-entry:last").append(formattedEmployer + formattedTitle);
+//         $(".work-entry:last").append(HTMLworkDates.replace("%data%", work_entry.dates));
+//         $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work_entry.location));
+//         $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work_entry.description));
+//     });
+// };
+
+function displayWork(){
+    if (work.length > 0) {
+    // for(var i in work) {
+    //     $("#workExperience").append(HTMLworkStart);
+    //     var formattedEmployer = HTMLworkEmployer.replace("%data%", work[i].employer);
+    //     var formattedTitle = HTMLworkTitle.replace("%data%", work[i].title);
+    //     $(".work-entry:last").append(formattedEmployer + formattedTitle);
+    // }
+        work.forEach(function(work_entry){
+            console.log(work_entry);
+            $("#workExperience").append(HTMLworkStart);
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work_entry.employer);
+            var formattedTitle = HTMLworkTitle.replace("%data%", work_entry.title);
+            $(".work-entry:last").append(formattedEmployer + formattedTitle);
+            $(".work-entry:last").append(HTMLworkDates.replace("%data%", work_entry.dates));
+            $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work_entry.location));
+            $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work_entry.description));
+        });
+    };
+}
+
+displayWork();
