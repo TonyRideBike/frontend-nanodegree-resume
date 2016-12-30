@@ -129,7 +129,7 @@ function displayWork(){
     //     $(".work-entry:last").append(formattedEmployer + formattedTitle);
     // }
         work.forEach(function(work_entry){
-            console.log(work_entry);
+            // console.log(work_entry);
             $("#workExperience").append(HTMLworkStart);
             var formattedEmployer = HTMLworkEmployer.replace("%data%", work_entry.employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", work_entry.title);
@@ -142,3 +142,12 @@ function displayWork(){
 }
 
 displayWork();
+
+function inName(name_string){
+    name_string  = name_string.trim().split(" ");
+    name_string[1] = name_string[1].toUpperCase();
+    name_string[0] = name_string[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    return name_string[0] + " " + name_string[1];
+}
+
+$("#main").append(internationalizeButton);
