@@ -25,7 +25,7 @@ var bio = {
         "blog": "I don't have a blog :(",
         "location": "Guangzhou, China."
     },
-    "bioPic": "images/fry.png",
+    "bioPic": "images/tonyridebike.png",
     "welcomeMsg": "Lorem ipsum dolor sit amet etc etc etc.",
     "skills": [
         "Java",
@@ -55,12 +55,24 @@ var work = [
 
 var projects = [
     {
-        "title": "Flagship Android Smartphone development",
+        "title": "Flagship Android Smart phone development",
         "dates": "Feb. 2015 - Oct. 2015",
         "description": "In duty of seting up Android Telephony configuration, solving concerned issues, and providing technical support to other teams on issues with Android telephony framework or RIL related.",
         "image": "images/w2016.jpg"
     }
 ];
+
+projects.display = function() {
+    if(projects.length > 0) {
+        projects.forEach(function(project_entry){
+            $("#projects").append(HTMLprojectStart);
+            $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", project_entry.title));
+            $(".project-entry:last").append(HTMLprojectDates.replace("%data%", project_entry.dates));
+            $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", project_entry.description));
+            $(".project-entry:last").append(HTMLprojectImage.replace("%data%", project_entry.image));
+        });
+    }
+};
 
 var education = {
     "schools": [
@@ -99,6 +111,8 @@ $("#header").prepend(formattedName);
 
 // $("#header").append(work["position"]);
 // $("#header").append(education.name);
+
+// $("#topContacts").append(HTMLbioPic.replace("%data%", bio.bioPic));
 
 if (bio.skills.length > 0) {
     // console.log("length of skills = " + bio.skills.length);
@@ -157,12 +171,15 @@ function displayWork(){
 }
 
 displayWork();
+projects.display();
 
 function inName(name_string){
     name_string  = name_string.trim().split(" ");
     name_string[1] = name_string[1].toUpperCase();
-    name_string[0] = name_string[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    name_string[0] = name_string[0].slice(0,1).toUpperCase() + name_string[0].slice(1).toLowerCase();
     return name_string[0] + " " + name_string[1];
 }
 
 $("#main").append(internationalizeButton);
+
+$("#mapDiv").append(googleMap);
