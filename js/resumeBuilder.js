@@ -15,7 +15,7 @@ console.log("Hello World!");
 // $("#header").prepend(formattedName);
 
 var bio = {
-    "name": "Tony LYU",
+    "name": "Tony Lyu",
     "role": "Software Engineer",
     "contacts": {
         "mobile": "+86-177-2761-6451",
@@ -40,16 +40,25 @@ var work = [
     {
         "employer": "Samsung Electronic",
         "title": "Software Engineer",
-        "dates": "July 2014 - March 2016",
+        "dates": "Jul. 2014 - Mar. 2016",
         "location": "Guangzhou, China",
         "description": "Android Telephony Framework & RIL Engineer"
     },
     {
         "employer": "Auchan International Corporate",
         "title": "Software Engineer",
-        "dates": "Since April 2016",
+        "dates": "Since Apr. 2016",
         "location": "Guangzhou, China",
         "description": "it's my current job."
+    }
+];
+
+var projects = [
+    {
+        "title": "Flagship Android Smartphone development",
+        "dates": "Feb. 2015 - Oct. 2015",
+        "description": "In duty of seting up Android Telephony configuration, solving concerned issues, and providing technical support to other teams on issues with Android telephony framework or RIL related.",
+        "image": "images/w2016.jpg"
     }
 ];
 
@@ -57,7 +66,7 @@ var education = {
     "schools": [
         {
             "name": "JLU",
-            "dates": "September 2010 - July 2014",
+            "dates": "Sept. 2010 - Jul. 2014",
             "degree": "Bachelor's Degree of Engineering",
             "location": "Changchun, Jilin, China",
             "major": "Communication Engineering"
@@ -67,8 +76,14 @@ var education = {
         {
             "title": "JavaScript Basics",
             "school": "Udacity",
-            "dates": "Dec 7 2016 - today",
+            "dates": "Dec. 7 2016 - today",
             "url": "https://github.com/TonyRideBike/frontend-nanodegree-resume"
+        },
+        {
+            "title": "Android Development for Beginners",
+            "school": "Udacity",
+            "dates": "Feb. 2016",
+            "url": ""
         }
     ]
 };
